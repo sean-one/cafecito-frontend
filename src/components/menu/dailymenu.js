@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+import AxiosInstance from '../../helpers/axios';
 
 import './dailymenu.css';
 
@@ -9,7 +9,7 @@ const Menu = (props) => {
 
     useEffect(() => {
         
-        Axios.get(`http://localhost:3333/api/menu/${menuDate}`)
+        AxiosInstance.get(`/menu/${menuDate}`)
             .then(res => {
                 // check to make sure there is inventory 
                 const stocked = res.data.filter((product, i) => product.item_inventory > 0)

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+import AxiosInstance from '../../helpers/axios';
 
 import './products.css';
 
@@ -8,7 +8,7 @@ const Products = () => {
     const [updatedProductList, getUpdatedProductList] = useState([]);
 
     useEffect(() => {
-        Axios.get('http://localhost:3333/api/products')
+        AxiosInstance.get('/products')
             .then(res => {
                 // sort the product list by product.id
                 getProductList(res.data.sort((a, b) => a.id > b.id ? 1 : -1))
@@ -19,7 +19,7 @@ const Products = () => {
 
     const adjustProduct = async (e, adjustment, id) => {
         e.preventDefault();
-        await Axios.put(`http://localhost:3333/api/products/${adjustment}/${id}`, { amount: 1 })
+        await AxiosInstance.put(`/products/${adjustment}/${id}`, { amount: 1 })
             .then(res => {
                 const productIndex = productList.findIndex(product => product.id === id)
                 productList[productIndex].item_inventory = res.data[0].item_inventory
