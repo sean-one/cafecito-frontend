@@ -1,0 +1,33 @@
+.appHeader {
+    width: 80%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.branding {
+  width: 30%;
+  height: 100%;
+  background-color: chocolate;
+}
+
+.navigation {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: cornflowerblue;
+}
+
+.navLinks {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navLinks li {
+  margin: 0 2rem;
+}

@@ -5,14 +5,5 @@
   background-color: #282c34;
   text-align: center;
   min-height: 100vh;
-  width: 100vw;
-}
-
-.App-header {
-  height: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  max-width: 100vw;
 }

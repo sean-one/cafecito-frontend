@@ -41,7 +41,7 @@ const Menu = (props) => {
 
     return (
         <div className='menu'>
-            <h1>{`${menuDate}'s Menu`}</h1>
+            <h4>{`${menuDate}'s Menu`}</h4>
             {menu.map((line, i) => (
                 <div key={line.product_id} className='itemLine'>
                     <div className='itemImg'>
