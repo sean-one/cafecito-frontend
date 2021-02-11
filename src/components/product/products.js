@@ -17,24 +17,12 @@ const Products = () => {
             .catch(err => console.log(err));
     }, [updatedProductList]);
 
-    const removeProduct = async (e) => {
+    const adjustProduct = async (e, adjustment, id) => {
         e.preventDefault();
-        await Axios.put(`http://localhost:3333/api/products/removeProduct/${e.target.name}`, { amount: 1 })
+        await Axios.put(`http://localhost:3333/api/products/${adjustment}/${id}`, { amount: 1 })
             .then(res => {
-                const updatedProductIndex = productList.findIndex(product => product.id === res.data[0].id)
-                productList[updatedProductIndex].item_inventory = res.data[0].item_inventory
-                getUpdatedProductList(productList);
-                return productList;
-            })
-            .catch(err => console.log(err));
-    }
-
-    const addProduct = async (e) => {
-        e.preventDefault();
-        await Axios.put(`http://localhost:3333/api/products/addProduct/${e.target.name}`, { amount: 1 })
-            .then(res => {
-                const updatedProductIndex = productList.findIndex(product => product.id === res.data[0].id)
-                productList[updatedProductIndex].item_inventory = res.data[0].item_inventory
+                const productIndex = productList.findIndex(product => product.id === id)
+                productList[productIndex].item_inventory = res.data[0].item_inventory
                 getUpdatedProductList(productList);
                 return productList;
             })
@@ -54,11 +42,11 @@ const Products = () => {
                     </div>
                     <div className='inventory'>
                         <div className='inventoryItem productAdjust'>
-                            <button name={product.id} onClick={removeProduct}>-</button>
+                            <button name={product.id} onClick={e => adjustProduct(e, 'removeProduct', product.id)}>-</button>
                         </div>
                         <div className='inventoryItem currentStock' key={product.id}>{product.item_inventory}</div>
                         <div className='inventoryItem productAdjust'>
-                            <button name={product.id} onClick={addProduct}>+</button>
+                            <button name={product.id} onClick={e => adjustProduct(e, 'addProduct', product.id)}>+</button>
                         </div>
                     </div>
                 </div>
