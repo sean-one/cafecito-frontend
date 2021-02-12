@@ -16,17 +16,6 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      {/* <header className="App-header">
-        <div className="branding">
-          <h1>Cafecito</h1>
-        </div>
-        <div className="navigation">
-          <ul className="navLinks">
-            <Link to='/menu'><li>MENU</li></Link>
-            <Link to='/products'><li>PRODUCTS</li></Link>
-          </ul>
-        </div>
-      </header> */}
       <Route path='/menu'>
         <Menu today={today} tomorrow={tomorrow} />
       </Route>

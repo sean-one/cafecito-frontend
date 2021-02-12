@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import AxiosInstance from '../../helpers/axios';
 
+import ProductCard from '../product/productCard';
+
 import './dailymenu.css';
 
 const Menu = (props) => {
@@ -41,20 +43,9 @@ const Menu = (props) => {
 
     return (
         <div className='menu'>
-            <h4>{`${menuDate}'s Menu`}</h4>
+            <h3>{`${menuDate}'s Menu`}</h3>
             {menu.map((line, i) => (
-                <div key={line.product_id} className='itemLine'>
-                    <div className='itemImg'>
-                        <img src={`https://via.placeholder.com/250x300?text=${line.item}`} alt={`stock link to represent ${line.item}`} />
-                    </div>
-                    <div className='item'>
-                        <h4>{line.item} | ${line.item_price}</h4>
-                        <p><em>{line.item_description}</em></p>
-                    </div>
-                    <div className='stock'>
-                        <p>{line.item_inventory}</p>
-                    </div>
-                </div>
+                <ProductCard key={line.product_id} product={line} />
             ))}
             {button}
         </div>
