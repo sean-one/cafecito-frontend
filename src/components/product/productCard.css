@@ -21,6 +21,12 @@
     text-align: left;
 }
 
+.productDetails h4 {
+    color: grey;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
 .inventory {
     display: flex;
     flex-direction: column;
