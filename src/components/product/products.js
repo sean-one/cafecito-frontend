@@ -20,18 +20,6 @@ const Products = () => {
             // if adding adjustProduct add "updatedProductList" to array
     }, []);
 
-    // const adjustProduct = async (e, adjustment, id) => {
-    //     e.preventDefault();
-    //     await AxiosInstance.put(`/products/${adjustment}/${id}`, { amount: 1 })
-    //         .then(res => {
-    //             const productIndex = productList.findIndex(product => product.id === id)
-    //             productList[productIndex].item_inventory = res.data[0].item_inventory
-    //             getUpdatedProductList(productList);
-    //             return productList;
-    //         })
-    //         .catch(err => console.log(err))
-    // }
-
     return (
         <div className='productsPage'>
             {productList.map((product, i) => (

@@ -7,6 +7,7 @@ import './App.css';
 import Header from './components/header/header';
 import Menu from './components/menu/dailymenu';
 import Products from './components/product/products';
+import ProductEdit from './components/product/productEdit'
 
 const App = () => {
   const m = Moment();
@@ -19,7 +20,8 @@ const App = () => {
       <Route path='/menu'>
         <Menu today={today} tomorrow={tomorrow} />
       </Route>
-      <Route path='/products' component={Products} />
+      <Route exact path='/products' component={Products} />
+      <Route path='/products/:id' component={ProductEdit} />
     </div>
   );
 }
