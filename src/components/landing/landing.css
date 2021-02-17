@@ -1,0 +1,35 @@
+.landingPage {
+    width: 100%;
+    min-height: calc(100vh - var(--headerHeight));
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.brandingLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.brandingLogo img {
+    display: block;
+    max-width: 47%;
+}
+
+.socialHub {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    color: white;
+}
+
+.socialHub div {
+    margin: 1.5rem 6rem;
+    /* width: 50%; */
+}

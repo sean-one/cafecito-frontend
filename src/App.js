@@ -5,6 +5,7 @@ import Moment from 'moment';
 import './App.css';
 
 import Header from './components/header/header';
+import Landing from './components/landing/landing';
 import Menu from './components/menu/dailymenu';
 import Products from './components/product/products';
 import ProductEdit from './components/product/productEdit'
@@ -17,11 +18,14 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Route path='/menu'>
-        <Menu today={today} tomorrow={tomorrow} />
-      </Route>
-      <Route exact path='/products' component={Products} />
-      <Route path='/products/:id' component={ProductEdit} />
+      <div className="siteContainer">
+        <Route exact path='/' component={Landing} />
+        <Route path='/menu'>
+          <Menu today={today} tomorrow={tomorrow} />
+        </Route>
+        <Route exact path='/products' component={Products} />
+        <Route path='/products/:id' component={ProductEdit} />
+      </div>
     </div>
   );
 }
