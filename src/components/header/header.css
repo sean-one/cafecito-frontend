@@ -28,7 +28,7 @@
     align-items: center;
 }
 
-.navLinks {
+.navLinks, .mobileMenu {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -38,4 +38,24 @@
     font-size: 1.6rem;
     margin: 0 2rem;
     cursor: pointer;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+@media only screen and (max-width: 850px) {
+  .appHeader {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .navLinks {
+      display: none;
+  }
+
+  .mobileMenu {
+      display: flex;
+      padding-right: 2rem;
+  }
 }

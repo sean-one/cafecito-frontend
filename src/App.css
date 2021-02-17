@@ -14,3 +14,9 @@
   height: 100%;
   /* background-color: cyan; */
 }
+
+@media only screen and (max-width: 850px) {
+  .siteContainer {
+    width: 100%;
+  }
+}
