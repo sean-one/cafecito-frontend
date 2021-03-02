@@ -17,6 +17,7 @@ const Header = () => {
                 <ul className="navLinks">
                     <Link to='/menu'><li>menu</li></Link>
                     <Link to='/products'><li>products</li></Link>
+                    <Link to='/events'><li>events</li></Link>
                 </ul>
                 <div className="mobileMenu">
                     <FontAwesomeIcon icon={ faBars } size="3x" />
