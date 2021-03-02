@@ -8,7 +8,8 @@ import Header from './components/header/header';
 import Landing from './components/landing/landing';
 import Menu from './components/menu/dailymenu';
 import Products from './components/product/products';
-import ProductEdit from './components/product/productEdit'
+import ProductEdit from './components/product/productEdit';
+import Events from './components/event/events';
 
 const App = () => {
   const m = Moment();
@@ -25,6 +26,7 @@ const App = () => {
         </Route>
         <Route exact path='/products' component={Products} />
         <Route path='/products/:id' component={ProductEdit} />
+        <Route path='/events' component={Events} />
       </div>
     </div>
   );
