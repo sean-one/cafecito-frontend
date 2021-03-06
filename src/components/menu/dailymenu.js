@@ -42,7 +42,7 @@ const Menu = (props) => {
     }
 
     return (
-        <div className='menu'>
+        <div className='menu wrapper'>
             <h3>{`${menuDate}'s Menu`}</h3>
             {menu.map((line, i) => (
                 <ProductCard key={line.product_id} product={line} />

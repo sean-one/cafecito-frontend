@@ -1,8 +1,8 @@
 const eventSampleData = [
     {
         "event": "great event pour over",
-        "start": "1614528000",
-        "finish": "1614544200",
+        "start": "2021-03-07T10:00:00Z",
+        "finish": "2021-03-07T12:00:00Z",
         "address": "123 north road",
         "city": "townsville",
         "state": "CA",
@@ -11,8 +11,8 @@ const eventSampleData = [
     },
     {
         "event": "another pour over",
-        "start": "1614643200",
-        "finish": "1614661200",
+        "start": "2021-03-09T16:00:00Z",
+        "finish": "2021-03-09T18:00:00Z",
         "address": "987 south ave",
         "city": "metrocity",
         "state": "CA",
@@ -21,8 +21,8 @@ const eventSampleData = [
     },
     {
         "event": "coffee & kush",
-        "start": "1614704400",
-        "finish": "1614715200",
+        "start": "2021-03-05T08:00:00Z",
+        "finish": "2021-03-05T11:00:00Z",
         "address": "246 east blvd",
         "city": "sunnyville",
         "state": "CA",

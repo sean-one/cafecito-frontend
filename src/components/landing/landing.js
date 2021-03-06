@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import cafecitologo from '../../imgs/cafecitoC-white-lrg.png';
 import './landing.css';
@@ -22,7 +22,7 @@ function Landing() {
                     <a href={`${process.env.REACT_APP_FACEBOOK_LINK}`} target="blank"><FontAwesomeIcon icon={faFacebook} size='6x' /></a>
                 </div>
             </div>
-            <Link to='/menu'><button>ENTER</button></Link>
+            {/* <Link to='/menu'><button>ENTER</button></Link> */}
         </div>
     )
 }

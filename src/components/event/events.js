@@ -5,19 +5,18 @@ import eventSampleData from '../../eventsData';
 
 import './events.css';
 
-const Events = () => {
+const Events = (props) => {
     const [ upcomingEvents, getUpcomingEvents ] = useState([]);
 
     useEffect(() => {
-        getUpcomingEvents(eventSampleData)
+        getUpcomingEvents(eventSampleData.sort((a, b) => a.start > b.start ? 1 : -1))
     }, [])
 
-    console.log(upcomingEvents)
+    // console.log(upcomingEvents)
     return (
-        <div className='eventsPage'>
-            <h1>events gonna go here</h1>
+        <div className='wrapper'>
             {upcomingEvents.map((singleEvent, i) => (
-                <EventCard key={i} event={singleEvent} />
+                <EventCard key={i} event={singleEvent} products={props.products} />
             ))}
         </div>
     )

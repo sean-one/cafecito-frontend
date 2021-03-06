@@ -21,7 +21,7 @@ const Products = () => {
     }, []);
 
     return (
-        <div className='productsPage'>
+        <div className='wrapper'>
             {productList.map((product, i) => (
                 <ProductCard key={product.id} product={product} cardtype={`product`}/>
             ))}
