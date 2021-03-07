@@ -9,7 +9,13 @@
 }
 
 .productImg {
+    width: 40rem;
     padding: 1rem;
+}
+
+.productImg img {
+    width: 100%;
+    height: auto;
 }
 
 .productDetails {
@@ -32,6 +38,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25%;
-    font-size: 3rem;
+    width: 20%;
+    font-size: 1.8rem;
 }

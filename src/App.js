@@ -36,7 +36,7 @@ const App = () => {
         {/* <Route path='/menu'>
           <Menu today={today} tomorrow={tomorrow} />
         </Route> */}
-        <Route exact path='/products' component={Products} />
+        <Route exact path='/products' render={(props) => <Products {...props} products={productList} />} />
         <Route path='/products/:id' component={ProductEdit} />
         <Route path='/events' render={(props) => <Events {...props} products={productList} />} />
       </div>

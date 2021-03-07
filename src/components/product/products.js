@@ -1,28 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import AxiosInstance from '../../helpers/axios';
+import React from 'react';
 
 import ProductCard from '../product/productCard';
 
 import './products.css';
 
-const Products = () => {
-    const [productList, getProductList] = useState([]);
-    // const [updatedProductList, getUpdatedProductList] = useState([]);
-
-    useEffect(() => {
-        AxiosInstance.get('/products')
-            .then(res => {
-                // sort the product list by product.id
-                getProductList(res.data.sort((a, b) => a.id > b.id ? 1 : -1))
-                return res;
-            })
-            .catch(err => console.log(err));
-            // if adding adjustProduct add "updatedProductList" to array
-    }, []);
+const Products = (props) => {
+    const productList = props.products.sort((a, b) => a.id > b.id ? 1 : -1)
 
     return (
         <div className='wrapper'>
             {productList.map((product, i) => (
+                // <div className='productPreview'>
+
+                // </div>
                 <ProductCard key={product.id} product={product} cardtype={`product`}/>
             ))}
         </div>
