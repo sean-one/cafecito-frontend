@@ -5,17 +5,19 @@ import sampleProduct from '../../imgs/sampleProduct.png';
 import './productCard.css';
 
 const productCard = (props) => {
+    const product = props.location.state.product
+    console.log(props.location.state.product);
     return (
         <div className='productLine'>
             <div className="productImg">
-                <img src={props.product.image || sampleProduct} alt={`stock link to represent ${props.product.item}`} />
+                <img src={product.image || sampleProduct} alt={`stock link to represent ${product.item}`} />
             </div>
             <div className="productDetails">
-                <h4>{props.product.item} | ${props.product.item_price}</h4>
-                <p><em>{props.product.item_description}</em></p>
+                <h4>{product.item} | ${product.item_price}</h4>
+                <p><em>{product.item_description}</em></p>
             </div>
             <div className="inventory">
-                <p>{props.product.item_inventory}</p>
+                <p>{product.item_inventory}</p>
             </div> 
         </div>
     );

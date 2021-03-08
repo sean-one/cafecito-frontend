@@ -9,7 +9,7 @@ import Header from './components/header/header';
 import Landing from './components/landing/landing';
 // import Menu from './components/menu/dailymenu';
 import Products from './components/product/products';
-import ProductEdit from './components/product/productEdit';
+import ProductCard from './components/product/productCard';
 import Events from './components/event/events';
 
 const App = () => {
@@ -37,7 +37,7 @@ const App = () => {
           <Menu today={today} tomorrow={tomorrow} />
         </Route> */}
         <Route exact path='/products' render={(props) => <Products {...props} products={productList} />} />
-        <Route path='/products/:id' component={ProductEdit} />
+        <Route path='/products/:id' component={ProductCard} />
         <Route path='/events' render={(props) => <Events {...props} products={productList} />} />
       </div>
     </div>

@@ -1,0 +1,28 @@
+.preview {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    width: 30%;
+    height: 100%;
+    border: 0.1rem solid white;
+}
+
+.previewImage {
+    width: 100%;
+}
+
+.previewImage img {
+    width: 100%;
+    height: auto;
+}
+
+.previewName {
+    width: 100%;
+    padding: 1rem;
+    /* background-color: white; */
+}
+
+.previewName h3 {
+    color: white;
+    text-transform: uppercase;
+}
