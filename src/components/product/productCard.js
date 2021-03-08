@@ -6,7 +6,7 @@ import './productCard.css';
 
 const productCard = (props) => {
     const product = props.location.state.product
-    console.log(props.location.state.product);
+    
     return (
         <div className='productLine'>
             <div className="productImg">

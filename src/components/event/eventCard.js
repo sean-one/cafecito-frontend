@@ -1,5 +1,6 @@
 import React from 'react';
 import Moment from 'moment';
+import { Link } from 'react-router-dom';
 
 import sampleImage from '../../imgs/sampleEventImage.jpg';
 
@@ -23,7 +24,14 @@ const EventCard = (props) => {
                 <p>{props.event.description}</p>
                 <h3>{`Products:`}</h3>
                 {productList.map(product => (
-                    <p key={product.id}>{`${product.item}`}</p>
+                    <Link to={{
+                        pathname: `/products/${product.id}`,
+                        state: {
+                            product
+                        }
+                    }}>
+                        <p key={product.id}>{`${product.item}`}</p>
+                    </Link>
                 ))}
             </div>
         </div>
