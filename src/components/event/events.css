@@ -29,3 +29,17 @@
 .eventDetails h4 {
     padding-top: 0;
 }
+
+.eventMenu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.eventProduct {
+    color: grey;
+    text-transform: capitalize;
+    letter-spacing: 0.05rem;
+    padding: 1rem;
+    margin: 0 1rem;
+}

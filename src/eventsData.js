@@ -1,5 +1,6 @@
 const eventSampleData = [
     {
+        "id": 1,
         "event": "great event pour over",
         "start": "2021-03-07T10:00:00Z",
         "finish": "2021-03-07T12:00:00Z",
@@ -10,6 +11,7 @@ const eventSampleData = [
         "products": [1, 2, 3]
     },
     {
+        "id": 2,
         "event": "another pour over",
         "start": "2021-03-09T16:00:00Z",
         "finish": "2021-03-09T18:00:00Z",
@@ -20,6 +22,7 @@ const eventSampleData = [
         "products": [4, 5, 6]
     },
     {
+        "id": 3,
         "event": "coffee & kush",
         "start": "2021-03-05T08:00:00Z",
         "finish": "2021-03-05T11:00:00Z",

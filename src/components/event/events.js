@@ -16,7 +16,7 @@ const Events = (props) => {
     return (
         <div className='wrapper'>
             {upcomingEvents.map((singleEvent, i) => (
-                <EventCard key={i} event={singleEvent} products={props.products} />
+                <EventCard key={singleEvent.id} event={singleEvent} products={props.products} />
             ))}
         </div>
     )

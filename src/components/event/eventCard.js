@@ -9,9 +9,10 @@ import './events.css';
 const EventCard = (props) => {
     const eventDate = Moment(props.event.start);
     let productList = props.products;
+    
     // set up event menu
     productList = productList.filter(({ id }) => props.event.products.includes(id));
-    console.log(productList)
+    
     return (
         <div className='eventCard'>
             <div className='eventImage'>
@@ -23,16 +24,18 @@ const EventCard = (props) => {
                 <p>{`${props.event.address}, ${props.event.city}, ${props.event.state}`}</p>
                 <p>{props.event.description}</p>
                 <h3>{`Products:`}</h3>
-                {productList.map(product => (
-                    <Link to={{
-                        pathname: `/products/${product.id}`,
-                        state: {
-                            product
-                        }
-                    }}>
-                        <p key={product.id}>{`${product.item}`}</p>
-                    </Link>
-                ))}
+                <div className='eventMenu'>
+                    {productList.map(product => (
+                        <Link key={product.id} to={{
+                            pathname: `/products/${product.id}`,
+                            state: {
+                                product
+                            }
+                        }}>
+                            <p className='eventProduct' key={product.id}>{`${product.item}`}</p>
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     )
