@@ -1,0 +1,19 @@
+.login {
+    color: white;
+}
+
+.loginForm {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.loginForm input {
+    margin: 0.75rem 0;
+}
+
+input[type=submit] {
+    width: 15%;
+}

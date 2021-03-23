@@ -11,6 +11,7 @@ import Landing from './components/landing/landing';
 import Products from './components/product/products';
 import ProductCard from './components/product/productCard';
 import Events from './components/event/events';
+import Admin from './components/admin/admin';
 
 const App = () => {
   // const m = Moment();
@@ -39,6 +40,7 @@ const App = () => {
         <Route exact path='/products' render={(props) => <Products {...props} products={productList} />} />
         <Route path='/products/:id' component={ProductCard} />
         <Route path='/events' render={(props) => <Events {...props} products={productList} />} />
+        <Route path='/admin' component={Admin} />
       </div>
     </div>
   );
