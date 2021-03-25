@@ -1,36 +1,55 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 import AxiosInstance from '../../../helpers/axios';
 
 import './login.css';
 
 const Login = (props) => {
-    const [username, setUsername] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    let history = useHistory();
 
-    const test = async (e) => {
+    const sendLogin = (e) => {
         e.preventDefault();
-        const userDetails = {
-            username,
-            email,
-            password
+        if(!e.target.username.value || !e.target.password.value) {
+            console.log('fill in all inputs')
+        } else {
+            const userDetails = {
+                name: e.target.username.value,
+                password: e.target.password.value
+            }
+
+            AxiosInstance.post('/auth/login', userDetails)
+                .then(response => {
+                    if(response.status === 200) {
+                        localStorage.setItem('auth_token', response.data.token);
+                        history.push('/');
+                    } else {
+                        throw new Error();
+                    }
+                    // console.log(response)
+                    // console.log(props)
+                })
+                .catch(err => {
+                    console.log(err);
+                })
         }
-        const userInfo = await AxiosInstance.post('/clients/login', userDetails);
         // console.log(userInfo)
-        setUsername("");
-        setPassword("");
-    } 
+        // setUsername("");
+        // setEmail("");
+        // setPassword("");
+    }
+
+    console.log()
 
     return (
         <div className='login'>
             <div className='loginPrompt'>
-                <form className='loginForm' onSubmit={test}>
+                <form className='loginForm' onSubmit={sendLogin}>
                     <label htmlFor='username'>Username:</label>
-                    <input type='text' id='username' name='username' value={username} onChange={e => setUsername(e.target.value)} />
-                    <label htmlFor='email'>Email:</label>
-                    <input type='email' id='email' name='email' value={email} onChange={e => setEmail(e.target.value)} />
-                    {/* <label htmlFor='password'>Password:</label>
-                    <input type='password' id='password' name='password' value={password} onChange={e => setPassword(e.target.value)} /> */}
+                    {/* <input type='text' id='username' name='username' value={username} onChange={e => setUsername(e.target.value)} /> */}
+                    <input type='text' id='username' name='username' />
+                    <label htmlFor='password'>Password:</label>
+                    <input type='password' id='password' name='password' />
                     <input type='submit' value='Submit' />
                 </form>
             </div>

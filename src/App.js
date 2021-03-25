@@ -12,6 +12,8 @@ import Products from './components/product/products';
 import ProductCard from './components/product/productCard';
 import Events from './components/event/events';
 import Admin from './components/admin/admin';
+import Registration from './components/registration/registration';
+import Login from './components/admin/login/login';
 
 const App = () => {
   // const m = Moment();
@@ -21,7 +23,7 @@ const App = () => {
   const [ productList, getProductList ] = useState([]) 
 
   const getProducts = async () => {
-    const products = await AxiosInstance.get('/products');
+    const products = await AxiosInstance.get('/api/products');
     getProductList(products.data)
   }
 
@@ -41,6 +43,8 @@ const App = () => {
         <Route path='/products/:id' component={ProductCard} />
         <Route path='/events' render={(props) => <Events {...props} products={productList} />} />
         <Route path='/admin' component={Admin} />
+        <Route path='/auth/login' component={Login} />
+        <Route path='/auth/registration' component={Registration} />
       </div>
     </div>
   );

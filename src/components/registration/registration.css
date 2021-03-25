@@ -1,0 +1,19 @@
+.registration {
+    color: white;
+}
+
+.registrationForm {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.registrationForm input {
+    margin: 0.75rem 0;
+}
+
+input[type=submit] {
+    width: 15%;
+}

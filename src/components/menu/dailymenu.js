@@ -11,7 +11,7 @@ const Menu = (props) => {
 
     useEffect(() => {
         
-        AxiosInstance.get(`/menu/${menuDate}`)
+        AxiosInstance.get(`/api/menu/${menuDate}`)
             .then(res => {
                 // check to make sure there is inventory 
                 const stocked = res.data.filter((product, i) => product.item_inventory > 0)

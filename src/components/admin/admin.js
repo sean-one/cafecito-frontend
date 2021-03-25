@@ -4,7 +4,7 @@ import Login from './login/login';
 
 const Admin = () => {
     const isLoggedIn = sessionStorage.getItem('isLoggedIn') || false;
-    console.log(isLoggedIn)
+    // console.log(sessionStorage)
     return (
         <div>
             {isLoggedIn
